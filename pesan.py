@@ -51,6 +51,10 @@ menu_items = {
     "es campur": 6000
 }
 
+# Membuat halaman untuk home
+def home_page():
+    st.subheader("_Welcome to_ Burjo Meisya Semarang")
+
 # Membuat halaman untuk daftar menu
 def menu_page():
     st.header("Pilihan Menu Makanan & Minuman:")
@@ -82,9 +86,11 @@ def order_page():
 # Membuat halaman utama
 def main():
     st.title("BURJO MEISYA SEMARANG")
-    menu_options = ["Daftar Menu", "Pemesanan"]
+    menu_options = ["Home", "Daftar Menu", "Pemesanan"]
     choice = st.sidebar.selectbox("Pilih Menu:", menu_options)
-    if choice == "Daftar Menu":
+    if choice == "Home" :
+        home_page()
+    elif choice == "Daftar Menu":
         menu_page()
     elif choice == "Pemesanan":
         order_page()
